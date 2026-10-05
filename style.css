@@ -1,0 +1,998 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #faf9fc;
+    color: #626275;
+    font-family: "Noto Serif JP", serif;
+    line-height: 1.8;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.header {
+    height: 65px;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #eeeaf4;
+}
+
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: #8177a4;
+}
+
+
+.menu-button {
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #8177a4;
+    cursor: pointer;
+}
+
+
+.menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(83,78,105,0.96);
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+.menu.active {
+    display: flex;
+}
+
+
+.menu a {
+    width: 70%;
+    text-align: center;
+    padding: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+
+.menu p {
+    margin-top: 35px;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 2px;
+}
+
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+}
+
+
+.hero {
+    position: relative;
+    height: 650px;
+    overflow: hidden;
+    background: #f5f2f8;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+.hero > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    top: 0;
+    left: 0;
+}
+
+
+/* 写真の上に白いグラデーション */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.05) 30%,
+        rgba(255,255,255,0.85) 100%
+    );
+}
+
+
+/* 写真の上に表示する文字 */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 65px;
+    font-weight: 400;
+    letter-spacing: 8px;
+    color: #8177a4;
+    margin-bottom: 0;
+    line-height: 0.9;
+}
+
+
+.concept {
+    margin-top: 0;
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: #747084;
+    line-height: 1.2;
+    
+}
+
+
+.bouquet {
+    margin-top: 20px;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 3px;
+    font-style: italic;
+    color: #8177a4;
+}
+
+.hero-flower {
+    font-size: 55px;
+    color: #b7a9d1;
+    margin-bottom: 15px;
+}
+
+
+.small-title {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: #9990b5;
+}
+
+
+.concept {
+    margin-top: 30px;
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: #747084;
+}
+
+
+.bouquet {
+    margin-top: 35px;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 3px;
+    font-style: italic;
+}
+
+
+.section,
+.concept-section {
+    padding: 70px 22px;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+
+.section-title p {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 3px;
+    color: #a49abb;
+}
+
+
+.section-title h2 {
+    font-size: 23px;
+    font-weight: 400;
+}
+
+
+.news-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e1eb;
+}
+
+
+.news-item span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+}
+
+
+.news-item strong {
+    margin-left: 8px;
+    font-size: 10px;
+    color: #a59bb9;
+}
+
+
+.news-item p {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+
+.more-button {
+    display: block;
+    width: 180px;
+    margin: 30px auto 0;
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #aaa0bf;
+    border-radius: 30px;
+    background: white;
+    color: #8177a4;
+    font-size: 13px;
+}
+
+
+.concept-section {
+    text-align: center;
+    background: #f2eff7;
+    max-width: none;
+}
+
+
+.concept-section h2 {
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+
+.concept-section p {
+    font-size: 14px;
+}
+
+
+.flower {
+    font-size: 45px;
+    color: #b6a5d0;
+    margin-top: 25px;
+}
+
+
+.page-hero {
+    padding: 75px 20px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #f5f3fa,
+        #e8e3f1
+    );
+}
+
+
+.page-hero p {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 4px;
+    color: #9185aa;
+}
+
+
+.page-hero h1 {
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+
+.member-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 35px 20px 70px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.member-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.member-slider .member-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.member-slider .member-photo {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+}
+
+.member-slider .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.member-card {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+
+.member-photo {
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8177a4;
+    background: #eeeaf5;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+       overflow: hidden;
+}
+
+
+.pink .member-photo {
+    background: #f5e5ec;
+}
+
+
+.lilac .member-photo {
+    background: #e9e1f2;
+}
+
+
+.white .member-photo {
+    background: #f5f5f5;
+}
+
+
+.blue .member-photo {
+    background: #e1ebf3;
+}
+
+
+.yellow .member-photo {
+    background: #f5eedc;
+}
+
+
+.member-card h2 {
+    margin-top: 10px;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+
+.member-card p {
+    font-size: 11px;
+}
+
+
+.member-card span {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #aaa;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.music {
+    padding: 40px 20px 70px;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+.music-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 30px rgba(120,110,140,0.08);
+}
+
+
+.jacket {
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg,#eee8f6,#dcd4e9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+    letter-spacing: 5px;
+    color: #8177a4;
+}
+
+
+.music-card h2 {
+    font-weight: 400;
+    margin: 8px 0;
+}
+
+
+.release {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+
+.track {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+    padding: 13px 0;
+    font-size: 13px;
+}
+
+
+.track span {
+    color: #aaa0bb;
+}
+
+
+.live {
+    padding: 40px 20px 70px;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+.next-live {
+    background: #f0edf6;
+    padding: 35px 25px;
+    text-align: center;
+}
+
+
+.next-live h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+
+.next-live h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+
+.date {
+    margin-top: 20px;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+
+.schedule {
+    margin-top: 60px;
+}
+
+
+.schedule h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+
+.schedule-item {
+    padding: 17px 0;
+    border-bottom: 1px solid #e4e0ea;
+}
+
+
+.schedule-item span {
+    font-family: "Cormorant Garamond", serif;
+    color: #9388aa;
+}
+
+
+.schedule-item p {
+    font-size: 14px;
+}
+
+
+.schedule-item small {
+    font-size: 11px;
+    color: #999;
+}
+
+
+.goods-grid {
+    padding: 40px 20px 70px;
+    max-width: 700px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.goods-card {
+    background: white;
+    padding-bottom: 15px;
+}
+
+
+.goods-image {
+    aspect-ratio: 1;
+    background: #eeebf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8e83a7;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 2px;
+}
+
+
+.goods-card h2 {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 8px 10px 0;
+}
+
+
+.goods-card p {
+    font-family: "Cormorant Garamond", serif;
+    margin-left: 10px;
+    color: #999;
+}
+
+
+.news {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px 20px 70px;
+}
+
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 35px;
+}
+
+
+.categories button {
+    border: 1px solid #d5cfdf;
+    background: white;
+    padding: 7px 12px;
+    color: #8177a4;
+    font-size: 11px;
+}
+
+
+.news-list {
+    padding: 25px 0;
+    border-bottom: 1px solid #e3dfea;
+}
+
+
+.news-list span {
+    font-family: "Cormorant Garamond", serif;
+    color: #9186a8;
+    font-size: 12px;
+}
+
+
+.news-list h2 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 8px 0;
+}
+
+
+.news-list p {
+    font-size: 12px;
+    color: #999;
+}
+
+
+@media (min-width: 768px) {
+
+    .member-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero {
+        min-height: 750px;
+    }
+
+    .hero h1 {
+        font-size: 90px;
+    }
+
+}
+
+
+
+
+
+/* =========================
+   LILAC 共通アニメーション
+========================= */
+
+
+/* ページを開いたときにふわっと表示 */
+body {
+    animation: pageFade 1s ease;
+}
+
+@keyframes pageFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ページタイトル */
+.page-hero p,
+.page-hero h1 {
+    animation: titleUp 1s ease both;
+}
+
+@keyframes titleUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* TOPの文字 */
+.hero-text {
+    animation: heroText 1.2s ease both;
+}
+
+@keyframes heroText {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* TOPの集合写真 */
+.hero > img {
+    animation: heroImage 2s ease both;
+}
+
+@keyframes heroImage {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* メンバー写真 */
+.member-card {
+    animation: cardFade 0.8s ease both;
+}
+
+@keyframes cardFade {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 追加アニメーション */
+html {
+    scroll-behavior: smooth;
+}
+
+.logo,
+.menu-button,
+.more-button,
+.news-item,
+.news-list,
+.music-card,
+.goods-card,
+.member-card,
+.schedule-item,
+.next-live,
+.menu a,
+.member-photo img,
+.goods-image,
+.jacket {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.35s ease, filter 0.35s ease;
+}
+
+.logo:hover,
+.menu-button:hover,
+.more-button:hover {
+    transform: translateY(-2px);
+}
+
+.more-button:hover {
+    box-shadow: 0 10px 24px rgba(129,119,164,0.12);
+}
+
+.news-item:hover,
+.news-list:hover,
+.music-card:hover,
+.goods-card:hover,
+.schedule-item:hover,
+.next-live:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 28px rgba(130, 118, 157, 0.10);
+}
+
+.member-card:hover .member-photo img,
+.goods-card:hover .goods-image,
+.music-card:hover .jacket {
+    transform: scale(1.05);
+}
+
+.hero-text {
+    filter: drop-shadow(0 12px 18px rgba(120, 110, 145, 0.12));
+}
+
+.flower {
+    display: inline-block;
+    animation: petalFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes petalFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(6deg);
+        opacity: 1;
+    }
+}
+
+.menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.menu.active {
+    opacity: 1;
+    visibility: visible;
+    animation: menuOpen 0.35s ease;
+}
+
+@keyframes menuOpen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.menu a {
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+.menu.active a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu.active a:nth-child(2) { transition-delay: 0.05s; }
+.menu.active a:nth-child(3) { transition-delay: 0.1s; }
+.menu.active a:nth-child(4) { transition-delay: 0.15s; }
+.menu.active a:nth-child(5) { transition-delay: 0.2s; }
+.menu.active a:nth-child(6) { transition-delay: 0.25s; }
+.menu.active a:nth-child(7) { transition-delay: 0.3s; }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* メンバー写真を少し拡大 */
+.member-photo img {
+    transition: transform 0.6s ease;
+}
+
+.member-card:hover .member-photo img {
+    transform: scale(1.04);
+}
+
+
+/* NEWS */
+.news-list {
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.news-list:hover {
+    transform: translateX(5px);
+}
+
+
+/* GOODS */
+.goods-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.goods-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(120,110,140,0.12);
+}
+
+
+/* MUSIC */
+.music-card {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.music-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(120,110,140,0.12);
+}
+
+
+/* ボタン */
+.more-button {
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.more-button:hover {
+    background: #8177a4;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* ロゴ */
+.logo {
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.6;
+}
+
+
+
+
+.member-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.member-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.member-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.member-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.member-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+
+.flower {
+  animation: floatFlower 3s ease-in-out infinite alternate;
+}
+@keyframes floatFlower {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-8px) rotate(10deg); }
+}
