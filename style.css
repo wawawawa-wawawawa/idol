@@ -139,8 +139,9 @@ a {
 .hero-text {
     position: relative;
     z-index: 2;
+    width: 100%;
     text-align: center;
-    padding-bottom: 15px;
+    padding: 0 20px 15px;
 }
 
 
@@ -166,11 +167,14 @@ a {
 
 
 .bouquet {
-    margin-top: 20px;
+    display: block;
+    width: max-content;
+    margin: 20px 0 0 auto;
     font-family: "Cormorant Garamond", serif;
     letter-spacing: 3px;
     font-style: italic;
     color: #8177a4;
+    text-align: right;
 }
 
 .hero-flower {
@@ -199,8 +203,14 @@ a {
 .bouquet {
     margin-top: 35px;
     font-family: "Cormorant Garamond", serif;
+    font-size: 14px;
     letter-spacing: 3px;
     font-style: italic;
+    color: #8177a4;
+    display: block;
+    width: max-content;
+    margin-left: auto;
+    text-align: right;
 }
 
 
@@ -296,6 +306,7 @@ a {
 
 
 .page-hero {
+    position: relative;
     padding: 75px 20px;
     text-align: center;
     background: linear-gradient(
@@ -305,11 +316,18 @@ a {
     );
 }
 
-
 .page-hero p {
     font-family: "Cormorant Garamond", serif;
     letter-spacing: 4px;
     color: #9185aa;
+}
+
+.page-hero .page-hero-note {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 11px;
+    letter-spacing: 0;
 }
 
 
@@ -341,8 +359,8 @@ a {
         "photo"
         "name"
         "role";
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
+    text-align: left;
     animation: none;
     transition: opacity 0.8s ease, visibility 0s linear 0.8s;
 }
@@ -375,7 +393,7 @@ a {
 }
 
 .member-slider .member-card {
-    text-align: center;
+    text-align: left;
     padding-bottom: 25px;
 }
 
@@ -387,6 +405,19 @@ a {
     grid-area: role;
 }
 
+.member-slider .member-details {
+    grid-area: role;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    line-height: 1.8;
+}
+
+.member-slider .member-details p {
+    grid-area: auto;
+    margin: 0;
+}
+
 @media (min-width: 768px) {
     .member-slider .member-card {
         grid-template-columns: minmax(0, 1.3fr) minmax(220px, 0.7fr);
@@ -394,6 +425,7 @@ a {
             "photo name"
             "photo role";
         column-gap: 6%;
+        align-content: center;
         min-height: 520px;
         text-align: left;
         padding: 0 24px 25px;
@@ -410,7 +442,7 @@ a {
     }
 
     .member-slider .member-card p {
-        align-self: center;
+        align-self: stretch;
         font-size: 15px;
     }
 
@@ -513,6 +545,12 @@ a {
     font-size: 35px;
     letter-spacing: 5px;
     color: #8177a4;
+}
+
+.jacket img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -1069,6 +1107,19 @@ html {
 
 .member-page .member-photo {
     background: transparent;
+    position: relative;
+    container-type: size;
+}
+
+.member-page .member-photo .mayu-overlay {
+    position: absolute;
+    left: calc(50% - 49.7cqh);
+    bottom: -3%;
+    z-index: 1;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
 }
 
 @media (max-width: 600px) {
